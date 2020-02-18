@@ -25,7 +25,9 @@ def get_user_input_with_three(instructions, input_command_one, input_command_two
 
 
 def create_artist(artist):
-    print() # useless command to have something in my method
+    name, email = get_user_input_with_two('Please insert artist information.', 'Name: ', 'Email: ')
+    artist = Artist(name, email)
+    database_control.create_artist(artist)
     ##TODO Create method to create artist
     ##      Calls database_control
 
