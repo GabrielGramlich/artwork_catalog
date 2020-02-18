@@ -33,7 +33,11 @@ def display_works(artworks):
 def update_artwork():
     artist_name, artwork_name = get_user_input_with_two('What artist and piece would you like to update?', 'Artist name: ', 'Artwork name: ')
     #TODO verify both exist
-    availability = get_user_input('What would you like to set the availability to?', 'Availability: ')
+    availability_string = get_user_input('What would you like to set the availability to? Enter \'y\' or \'n\'', 'Availability: ')
+    #TODO verify correct response
+    availability = False
+    if availability_string == 'y':
+        availability = True
     database_control.update_artwork(artist_name, artwork_name, availability)
 
 
