@@ -6,5 +6,5 @@ class Artist:
 
 
 	def __str__(self):
-		artist_info = 'Artist Information:\nName:\t' + name + '\nEmail:\t' + email + '\n'
+		artist_info = 'Artist Information:\nName:\t' + self.name + '\nEmail:\t' + self.email + '\n'
 		return artist_info
