@@ -7,6 +7,7 @@ def main():
 	while True:
 		choice = get_user_input('Enter \'m\' to view menu, or enter your choice.', 'What would you like to do? ')
 		if choice == 'q':
+			call_for_choice(menu, choice)
 			break
 		else:
 			call_for_choice(menu, choice)
@@ -20,6 +21,7 @@ def create_menu():
 	menu.add_option('s', '[S]earch artwork', search_artwork)
 	menu.add_option('u', '[U]pdate artwork', update_artwork)
 	menu.add_option('d', '[D]elete artwork', delete_artwork)
+	menu.add_option('q', '[Q]uit', quit)
 
 	return menu
 
@@ -32,6 +34,10 @@ def call_for_choice(menu, choice):
 		print(menu)
 	else:
 		print('Invalid selection. Please try again.')
+
+
+def quit():
+	print('Bye!')
 
 
 main()
