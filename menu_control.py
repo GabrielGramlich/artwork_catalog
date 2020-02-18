@@ -2,11 +2,6 @@ from artist import Artist
 from artwork import Artwork
 from get_input import *
 
-def display_menu():
-    print() # useless command to have something in my method
-    ##TODO Create display menu method
-
-
 def create_artist():
     name, email = get_user_input_with_two('Please insert artist information.', 'Name: ', 'Email: ')
     #TODO verify artist not in database
