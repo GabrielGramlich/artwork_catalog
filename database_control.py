@@ -17,6 +17,15 @@ def create_artwork(artwork):
     db.close()
 
 
+def search_artist(name):
+    exists = False
+    db.connect()
+    artist = Artist().select().where(Artist.name == name)
+    if len(artist) > 0:
+        exists = True
+    return exists
+
+
 def search_artwork(name):
     results = []
     db.connect()
