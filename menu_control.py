@@ -56,6 +56,7 @@ def update_artwork():
 
 
 def delete_artwork(artwork):
-    print() # useless command to have something in my method
-    ##TODO Create method to delete artwork
-    ##      Calls database_control
+    artist_name, artwork_name = get_user_input_with_two('What artist and piece would you like to update?', 'Artist name: ', 'Artwork name: ')
+    #TODO verify both exist
+    #TODO verify user wants to delete
+    database_control.delete_artwork(artist_name, artwork_name)
