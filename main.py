@@ -6,6 +6,8 @@ def main():
 		choice = input('What would you like to do? ')
 		if choice == 'q':
 			break
+		else:
+			call_for_choice(choice)
 
 
 def call_for_choice(choice):
