@@ -2,10 +2,9 @@ from peewee import *
 
 db = SqliteDatabase('artwork_catalog.sqlite')
 
-
 class Artist_Table(Model):
-    self.name = CharField()
-    self.email = CharField()
+    name = CharField()
+    email = CharField()
 
     class Meta:
         database = db
@@ -16,10 +15,10 @@ class Artist_Table(Model):
 
 
 class Artwork_Table(Model):
-    self.artist = CharField()
-    self.artwork = CharField()
-    self.price = DecimalField()
-    self.availability = BooleanField()
+    artist = CharField()
+    artwork = CharField()
+    price = DecimalField()
+    availability = BooleanField()
 
     class Meta:
         database = db
@@ -29,5 +28,6 @@ class Artwork_Table(Model):
         return f'Artist:\t\t{self.name}\nArtwork:\t\t{self.artwork}\nPrice:\t\t{self.price}\nAvailability:\t{self.availability}\n'
 
 
-db.connect()
-db.create_tables([Artist_Table, Artwork_Table])
+def setup():
+    db.connect()
+    db.create_tables([Artist_Table, Artwork_Table])
