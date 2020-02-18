@@ -9,7 +9,7 @@ def main():
 		if choice == 'q':
 			break
 		else:
-			call_for_choice(choice)
+			call_for_choice(menu, choice)
 
 
 def create_menu():
@@ -24,9 +24,14 @@ def create_menu():
 	return menu
 
 
-def call_for_choice(choice):
-    print() # useless command to have something in my method
-	##TODO Call appropriate method based on user choice
+def call_for_choice(menu, choice):
+	if menu.is_valid(choice):
+		function = menu.get_function(choice)
+		function()
+	elif choice == 'm':
+		print(menu)
+	else:
+		print('Invalid selection. Please try again.')
 
 
 main()
