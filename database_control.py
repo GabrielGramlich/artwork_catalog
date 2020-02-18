@@ -1,10 +1,13 @@
 from peewee import *
+from database_setup import Artist_Table as Artist, Artwork_Table as Artwork
 
 db = SqliteDatabase('artwork_catalog.sqlite')
 
 def create_artist(artist):
-    print() # Useless line to have something in my method
-    ##TODO Create add artist method
+    db.connect()
+    artist = Artist(artist.name, artist.email)
+    artist.save()
+    db.close()
 
 
 def create_artwork(artwork):
