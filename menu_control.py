@@ -4,9 +4,8 @@ def display_menu():
 
 
 def get_user_input(input_command):
-    print() # useless command to have something in my method
-    ##TODO Create user input method
-    ##      overload for multiple inputs: one for artist, artwork creation, and artwork search.
+    choice = input(input_command)
+    return choice
 
 
 def get_user_input(input_command_one, input_command_two):
