@@ -41,6 +41,8 @@ def update_artwork(artist_name, artwork_name, availability):
     rows_updated = Artwork().update(availability == availability).where(Artwork.artist == artist_name and Artwork.name == artist_name).execute()
     if rows_updated > 0:
         print('Successful update!')
+    else:
+        print('Unable to update. Please check if piece exists.')
     db.close()
 
 
@@ -49,4 +51,6 @@ def delete_search(artist_name, artwork_name):
     rows_deleted = Artwork().delete().where(Artwork.artist == artist_name and Artwork.name == artist_name).execute()
     if rows_deleted > 0:
         print('Successful deletion!')
+    else:
+        print('Unable to delete. Please check if piece exists.')
     db.close()
