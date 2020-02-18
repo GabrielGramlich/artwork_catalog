@@ -15,9 +15,10 @@ def get_user_input(input_command_one, input_command_two):
 
 
 def get_user_input(input_command_one, input_command_two, input_command_three):
-    print() # useless command to have something in my method
-    ##TODO Create user input method
-    ##      overload for multiple inputs: one for artist, artwork creation, and artwork search.
+    choice_one = input(input_command_one)
+    choice_two = input(input_command_one)
+    choice_three = input(input_command_three)
+    return choice_one, choice_two, choice_three
 
 
 def create_artist(artist):
