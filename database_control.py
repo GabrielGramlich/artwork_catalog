@@ -34,5 +34,6 @@ def update_artwork(artist_name, artwork_name, availability):
 
 
 def delete_search(artist_name, artwork_name):
-    print() # Useless line to have something in my method
-    ##TODO Create update availability status method
+    db.connect()
+    Artwork().delete().where(Artwork.artist == artist_name and Artwork.name == artist_name).execute()
+    db.close()
