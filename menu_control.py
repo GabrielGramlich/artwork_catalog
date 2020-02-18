@@ -12,6 +12,13 @@ def create_artist():
 
 def create_artwork():
     artist, name, price = get_user_input_with_three('Please insert artwork information.', 'Artist: ', 'Name: ', 'Price: ')
+    while True:
+        try:
+            price = price - .1
+            price = price + .1
+            break
+        except:
+            price = input('Invalid price. Please enter a number. ')
     exists = search_artist(name)
     if not exists:
         artwork = Artwork(artist, name, price)
