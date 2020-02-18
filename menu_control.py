@@ -4,9 +4,10 @@ from get_input import *
 
 def create_artist():
     name, email = get_user_input_with_two('Please insert artist information.', 'Name: ', 'Email: ')
-    #TODO verify artist not in database
-    artist = Artist(name, email)
-    database_control.create_artist(artist)
+    exists = search_artist(name)
+    if not exists:
+        artist = Artist(name, email)
+        database_control.create_artist(artist)
 
 
 def create_artwork():
