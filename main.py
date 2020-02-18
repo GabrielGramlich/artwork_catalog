@@ -1,9 +1,8 @@
-from menu_control import display_menu
+from menu_control import get_user_input
 
 def main():
 	while True:
-		print('Enter \'m\' to view menu, or enter your choice.')
-		choice = input('What would you like to do? ')
+		choice = get_user_input('Enter \'m\' to view menu, or enter your choice.', 'What would you like to do? ')
 		if choice == 'q':
 			break
 		else:
