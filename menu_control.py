@@ -8,7 +8,8 @@ def create_artist():
     if not exists:
         artist = Artist(name, email)
         database_control.create_artist(artist)
-
+    else:
+        print('Artist already exists')
 
 def create_artwork():
     artist, name, price = get_user_input_with_three('Please insert artwork information.', 'Artist: ', 'Name: ', 'Price: ')
@@ -20,10 +21,11 @@ def create_artwork():
         except:
             price = input('Invalid price. Please enter a number. ')
     exists = search_artist(name)
-    if not exists:
+    if exists:
         artwork = Artwork(artist, name, price)
         database_control.create_artwork(artwork)
-    #TODO verify price is float
+    else:
+        print('No artist with that name.')
 
 
 def search_artwork():
