@@ -48,7 +48,8 @@ def update_artwork():
     exists = search_artist(name)
     if exists:
         availability_string = get_user_input('What would you like to set the availability to? Enter \'y\' or \'n\'', 'Availability: ')
-        #TODO verify correct response
+        while availability_string != 'y' and availability_string != 'n':
+            availability_string = get_user_input('Invalid response. Enter \'y\' or \'n\'', 'Availability: ')
         availability = False
         if availability_string == 'y':
             availability = True
