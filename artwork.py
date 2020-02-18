@@ -1,6 +1,6 @@
 class Artwork:
 
-	def __init__(self, artist, name, price, availability):
+	def __init__(self, artist, name, price, availability=True):
 		self.artist = artist
 		self.artwork_name = name
 		self.price = price
