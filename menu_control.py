@@ -29,12 +29,15 @@ def get_user_input_with_three(instructions, input_command_one, input_command_two
 
 def create_artist():
     name, email = get_user_input_with_two('Please insert artist information.', 'Name: ', 'Email: ')
+    #TODO verify artist not in database
     artist = Artist(name, email)
     database_control.create_artist(artist)
 
 
 def create_artwork():
     artist, name, price = get_user_input_with_three('Please insert artwork information.', 'Artist: ', 'Name: ', 'Price: ')
+    #TODO verify artist in database
+    #TODO verify price is float
     artwork = Artwork(artist, name, price)
     database_control.create_artwork(artwork)
 
