@@ -5,7 +5,7 @@ def main():
 	menu = create_menu()
 
 	while True:
-		choice = get_user_input('Enter \'m\' to view menu, or enter your choice.', 'What would you like to do? ')
+		choice = get_user_input('Enter \'m\' to view menu, or enter your choice.', 'What would you like to do? ').lower()
 		if choice == 'q':
 			call_for_choice(menu, choice)
 			break
