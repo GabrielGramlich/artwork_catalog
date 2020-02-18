@@ -4,7 +4,6 @@
 
 class Menu:
 
-
 	def __init__(self):
 		self.descriptions = {}
 		self.functions = {}
