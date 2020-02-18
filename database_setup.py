@@ -31,3 +31,4 @@ class Artwork_Table(Model):
 def setup():
     db.connect()
     db.create_tables([Artist_Table, Artwork_Table])
+    db.close()
