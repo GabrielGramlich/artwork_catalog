@@ -1,5 +1,6 @@
 from menu_control import *
 from menu import Menu
+from database_setup import setup
 
 def main():
 	menu = create_menu()
@@ -40,4 +41,6 @@ def quit():
 	print('Bye!')
 
 
-main()
+if __name__ == '__main__':
+	setup()
+	main()
