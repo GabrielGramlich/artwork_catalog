@@ -15,6 +15,7 @@ class Artist_Table(Model):
 
 
 class Artwork_Table(Model):
+    # TODO Add foreign key constraint
     artist = CharField()
     artwork = CharField()
     price = DecimalField()
