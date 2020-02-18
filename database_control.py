@@ -29,7 +29,9 @@ def search_artwork(name):
 
 def update_artwork(artist_name, artwork_name, availability):
     db.connect()
-    Artwork().update(availability == availability).where(Artwork.artist == artist_name and Artwork.name == artist_name).execute()
+    rows_updated = Artwork().update(availability == availability).where(Artwork.artist == artist_name and Artwork.name == artist_name).execute()
+    if rows_updated > 0:
+        print('Successful update!')
     db.close()
 
 
