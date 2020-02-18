@@ -11,6 +11,10 @@ def create_artist(artist):
 
 
 def create_artwork(artwork):
+    db.connect()
+    artwork = Artwork(artwork.artist, artwork.name, artwork.price, artwork.availability)
+    artwork.save()
+    db.close()
     print() # Useless line to have something in my method
     ##TODO Create add artwork method - create artist if not in database
 
