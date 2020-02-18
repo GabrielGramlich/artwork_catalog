@@ -43,9 +43,9 @@ def create_artwork():
 
 
 def search_artwork(artist):
-    print() # useless command to have something in my method
-    ##TODO Create method to search artwork
-    ##      Calls database_control
+    name = get_user_input('What artist would you like to find works for?', 'Name: ')
+    artworks = search_artwork(name)
+    #TODO display artworks
 
 
 def update_artwork(artwork, availability):
