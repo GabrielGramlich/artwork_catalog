@@ -45,17 +45,23 @@ def display_works(artworks):
 
 def update_artwork():
     artist_name, artwork_name = get_user_input_with_two('What artist and piece would you like to update?', 'Artist name: ', 'Artwork name: ')
-    #TODO verify both exist
-    availability_string = get_user_input('What would you like to set the availability to? Enter \'y\' or \'n\'', 'Availability: ')
-    #TODO verify correct response
-    availability = False
-    if availability_string == 'y':
-        availability = True
-    database_control.update_artwork(artist_name, artwork_name, availability)
+    exists = search_artist(name)
+    if exists:
+        availability_string = get_user_input('What would you like to set the availability to? Enter \'y\' or \'n\'', 'Availability: ')
+        #TODO verify correct response
+        availability = False
+        if availability_string == 'y':
+            availability = True
+        database_control.update_artwork(artist_name, artwork_name, availability)
+    else:
+        print('No artist with that name.')
 
 
 def delete_artwork(artwork):
     artist_name, artwork_name = get_user_input_with_two('What artist and piece would you like to update?', 'Artist name: ', 'Artwork name: ')
-    #TODO verify both exist
+    exists = search_artist(name)
+    if exists:
     #TODO verify user wants to delete
-    database_control.delete_artwork(artist_name, artwork_name)
+        database_control.delete_artwork(artist_name, artwork_name)
+    else:
+        print('No artist with that name.')
