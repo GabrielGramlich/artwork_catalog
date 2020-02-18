@@ -6,7 +6,10 @@ def main():
 		choice = input('What would you like to do? ')
 		if choice == 'q':
 			break
-	##TODO Call display menu method
+
+
+def call_for_choice(choice):
+    print() # useless command to have something in my method
 	##TODO Call appropriate method based on user choice
 
 
