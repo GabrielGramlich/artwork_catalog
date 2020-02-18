@@ -15,13 +15,16 @@ def create_artwork(artwork):
     artwork = Artwork(artwork.artist, artwork.name, artwork.price, artwork.availability)
     artwork.save()
     db.close()
-    print() # Useless line to have something in my method
-    ##TODO Create add artwork method - create artist if not in database
 
 
 def search_artwork(name):
-    print() # Useless line to have something in my method
-    ##TODO Create search artwork method by artist
+    results = []
+    db.connect()
+    artist_work = Artwork().select().where(Artwork.artist == name)
+    for work in artist_work:
+        results.append(work)
+    db.close()
+    return results
 
 
 def update_artwork(artist_name, artwork_name, availability):
