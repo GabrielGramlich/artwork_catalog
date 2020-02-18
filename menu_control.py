@@ -25,10 +25,13 @@ def create_artwork():
 def search_artwork():
     name = get_user_input('What artist would you like to find works for?', 'Name: ')
     artworks = database_control.search_artwork(name)
+    display_works(artworks)
+
+
+def display_works(artworks):
     print(name + '\'s works:')
     for work in artworks:
         print(work)
-    #TODO display artworks
 
 
 def update_artwork():
