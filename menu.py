@@ -16,10 +16,10 @@ class Menu:
 
 
 	def is_valid(self, choice):
-		return choice in self.text_descriptions
+		return choice in self.descriptions
 
 
-	def get_action(self, choice):
+	def get_function(self, choice):
 		return self.functions.get(choice)
 
 
