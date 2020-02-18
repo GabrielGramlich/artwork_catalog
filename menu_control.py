@@ -3,18 +3,21 @@ def display_menu():
     ##TODO Create display menu method
 
 
-def get_user_input(input_command):
+def get_user_input(instructions, input_command):
+    print(instructions)
     choice = input(input_command)
     return choice
 
 
-def get_user_input(input_command_one, input_command_two):
+def get_user_input(instructions, input_command_one, input_command_two):
+    print(instructions)
     choice_one = input(input_command_one)
     choice_two = input(input_command_one)
     return choice_one, choice_two
 
 
-def get_user_input(input_command_one, input_command_two, input_command_three):
+def get_user_input(instructions, input_command_one, input_command_two, input_command_three):
+    print(instructions)
     choice_one = input(input_command_one)
     choice_two = input(input_command_one)
     choice_three = input(input_command_three)
