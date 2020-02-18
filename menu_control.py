@@ -12,10 +12,11 @@ def create_artist():
 
 def create_artwork():
     artist, name, price = get_user_input_with_three('Please insert artwork information.', 'Artist: ', 'Name: ', 'Price: ')
-    #TODO verify artist in database
+    exists = search_artist(name)
+    if not exists:
+        artwork = Artwork(artist, name, price)
+        database_control.create_artwork(artwork)
     #TODO verify price is float
-    artwork = Artwork(artist, name, price)
-    database_control.create_artwork(artwork)
 
 
 def search_artwork():
