@@ -1,3 +1,5 @@
+from artist import Artist
+
 def display_menu():
     print() # useless command to have something in my method
     ##TODO Create display menu method
