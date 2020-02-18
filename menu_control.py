@@ -42,16 +42,17 @@ def create_artwork():
     database_control.create_artwork(artwork)
 
 
-def search_artwork(artist):
+def search_artwork():
     name = get_user_input('What artist would you like to find works for?', 'Name: ')
-    artworks = search_artwork(name)
+    artworks = database_control.search_artwork(name)
     #TODO display artworks
 
 
-def update_artwork(artwork, availability):
-    print() # useless command to have something in my method
-    ##TODO Create method to update artwork
-    ##      Calls database_control
+def update_artwork():
+    artist_name, artwork_name = get_user_input_with_two('What artist and piece would you like to update?', 'Artist name: ', 'Artwork name: ')
+    #TODO verify both exist
+    availability = get_user_input('What would you like to set the availability to?', 'Availability: ')
+    database_control.update_artwork(artist_name, artwork_name, availability)
 
 
 def delete_artwork(artwork):
