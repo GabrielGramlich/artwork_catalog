@@ -47,9 +47,9 @@ def update_artwork(artist_name, artwork_name, availability):
     db.close()
 
 
-def delete_search(artist_name, artwork_name):
+def delete_artwork(artist_name, artwork_name):
     db.connect()
-    rows_deleted = Artwork().delete().where(Artwork.artist == artist_name and Artwork.name == artist_name).execute()
+    rows_deleted = Artwork().delete().where(Artwork.artist == artist_name and Artwork.artwork == artwork_name).execute()
     if rows_deleted > 0:
         print('Successful deletion!')
     else:
