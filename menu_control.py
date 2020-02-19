@@ -37,15 +37,15 @@ def search_artwork():
     if exists:
         artworks = database_control.search_artwork(name)
         if len(artworks) > 0:
-            display_works(artworks)
+            display_works(name, artworks)
         else:
             print("Artist has no artwork.")
     else:
         print('No artist with that name.')
 
 
-def display_works(artworks):
-    print(name + '\'s works:')
+def display_works(artist, artworks):
+    print(artist + '\'s works:')
     for work in artworks:
         print(work)
 

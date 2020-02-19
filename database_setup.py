@@ -11,11 +11,11 @@ class Artist_Table(Model):
 
 
     def __str__(self):
-        return f'Artist:\t{self.name}\nEmail:\t{self.email}\n'
+        return f'Artist:\t{self.artist_name}\nEmail:\t{self.email}\n'
 
 
 class Artwork_Table(Model):
-    artist = ForeignKeyField(Artist_Table, backref='artist')
+    artist = ForeignKeyField(Artist_Table.artist_name, backref='artist_name')
     artwork = CharField()
     price = DecimalField()
     availability = BooleanField()
@@ -25,7 +25,7 @@ class Artwork_Table(Model):
 
 
     def __str__(self):
-        return f'Artist:\t\t{self.name}\nArtwork:\t\t{self.artwork}\nPrice:\t\t{self.price}\nAvailability:\t{self.availability}\n'
+        return f'Artwork:\t{self.artwork}\nPrice:\t\t{self.price}\nAvailability:\t{self.availability}\n'
 
 
 def setup():
