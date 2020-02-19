@@ -5,7 +5,7 @@ db = SqliteDatabase('artwork_catalog.sqlite')
 
 def create_artist(new_artist):
     db.connect()
-    artist = Artist(name=new_artist.name, email=new_artist.email)
+    artist = Artist(artist=new_artist.name, email=new_artist.email)
     artist.save()
     db.close()
 
