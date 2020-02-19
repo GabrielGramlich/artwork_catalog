@@ -13,15 +13,17 @@ def create_artist():
         print('Artist already exists')
 
 def create_artwork():
-    artist, name, price = get_user_input_with_three('Please insert artwork information.', 'Artist: ', 'Name: ', 'Price: ')
+    artist, name, price_string = get_user_input_with_three('Please insert artwork information.', 'Artist: ', 'Name: ', 'Price: ')
+    price = float(price_string)
     while True:
         try:
             price = price - .1
             price = price + .1
             break
         except:
-            price = input('Invalid price. Please enter a number. ')
-    exists = database_control.search_artist(name)
+            price_string = input('Invalid price. Please enter a number. ')
+            price = float(price_string)
+    exists = database_control.search_artist(artist)
     if exists:
         artwork = Artwork(artist, name, price)
         database_control.create_artwork(artwork)
