@@ -68,10 +68,10 @@ def update_artwork():
 
 def delete_artwork():
     artist_name, artwork_name = get_user_input_with_two('What artist and piece would you like to update?', 'Artist name: ', 'Artwork name: ')
-    exists = database_control.search_artist(name)
+    exists = database_control.search_artist(artist_name)
     if exists:
     #TODO verify user wants to delete
-        if get_user_input('Are you sure you want to delete?', 'Enter \'y\' or \'n\': ') == 'y':
+        if get_user_input('Are you sure you want to delete?', 'Enter \'Y\' or \'N\': ') == 'y':
             database_control.delete_artwork(artist_name, artwork_name)
         else:
             print('Deletion cancelled.')
