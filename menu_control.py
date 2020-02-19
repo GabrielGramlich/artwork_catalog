@@ -52,10 +52,11 @@ def display_works(artist, artworks):
 
 def update_artwork():
     artist_name, artwork_name = get_user_input_with_two('What artist and piece would you like to update?', 'Artist name: ', 'Artwork name: ')
-    exists = database_control.search_artist(name)
+    exists = database_control.search_artist(artist_name)
     if exists:
         availability_string = get_user_input('What would you like to set the availability to? Enter \'y\' or \'n\'', 'Availability: ')
-        while availability_string != 'y' and availability_string != 'n':
+        while availability_string != 'Y' and availability_string != 'N':
+            print(availability_string)
             availability_string = get_user_input('Invalid response. Enter \'y\' or \'n\'', 'Availability: ')
         availability = False
         if availability_string == 'y':
@@ -65,7 +66,7 @@ def update_artwork():
         print('No artist with that name.')
 
 
-def delete_artwork(artwork):
+def delete_artwork():
     artist_name, artwork_name = get_user_input_with_two('What artist and piece would you like to update?', 'Artist name: ', 'Artwork name: ')
     exists = database_control.search_artist(name)
     if exists:
