@@ -5,14 +5,14 @@ db = SqliteDatabase('artwork_catalog.sqlite')
 
 def create_artist(artist):
     db.connect()
-    artist = Artist(artist.name, artist.email)
+    artist = Artist(name=artist.name, email=artist.email)
     artist.save()
     db.close()
 
 
 def create_artwork(artwork):
     db.connect()
-    artwork = Artwork(artwork.artist, artwork.name, artwork.price, artwork.availability)
+    artwork = Artwork(artist=artwork.artist, artwork=artwork.name, price=artwork.price, availability=artwork.availability)
     artwork.save()
     db.close()
 
@@ -39,7 +39,7 @@ def search_artwork(name):
 
 def update_artwork(artist_name, artwork_name, availability):
     db.connect()
-    rows_updated = Artwork().update(availability == availability).where(Artwork.artist == artist_name and Artwork.name == artist_name).execute()
+    rows_updated = Artwork().update(availability=availability).where(Artwork.artist == artist_name and Artwork.name == artist_name).execute()
     if rows_updated > 0:
         print('Successful update!')
     else:
