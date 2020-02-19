@@ -5,7 +5,7 @@ from get_input import *
 
 def create_artist():
     name, email = get_user_input_with_two('Please insert artist information.', 'Name: ', 'Email: ')
-    exists = search_artist(name)
+    exists = database_control.search_artist(name)
     if not exists:
         artist = Artist(name, email)
         database_control.create_artist(artist)
@@ -21,7 +21,7 @@ def create_artwork():
             break
         except:
             price = input('Invalid price. Please enter a number. ')
-    exists = search_artist(name)
+    exists = database_control.search_artist(name)
     if exists:
         artwork = Artwork(artist, name, price)
         database_control.create_artwork(artwork)
@@ -46,7 +46,7 @@ def display_works(artworks):
 
 def update_artwork():
     artist_name, artwork_name = get_user_input_with_two('What artist and piece would you like to update?', 'Artist name: ', 'Artwork name: ')
-    exists = search_artist(name)
+    exists = database_control.search_artist(name)
     if exists:
         availability_string = get_user_input('What would you like to set the availability to? Enter \'y\' or \'n\'', 'Availability: ')
         while availability_string != 'y' and availability_string != 'n':
@@ -61,7 +61,7 @@ def update_artwork():
 
 def delete_artwork(artwork):
     artist_name, artwork_name = get_user_input_with_two('What artist and piece would you like to update?', 'Artist name: ', 'Artwork name: ')
-    exists = search_artist(name)
+    exists = database_control.search_artist(name)
     if exists:
     #TODO verify user wants to delete
         if get_user_input('Are you sure you want to delete?', 'Enter \'y\' or \'n\': ') == 'y':
