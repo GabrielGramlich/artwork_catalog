@@ -71,7 +71,7 @@ def delete_artwork():
     exists = database_control.search_artist(artist_name)
     if exists:
     #TODO verify user wants to delete
-        if get_user_input('Are you sure you want to delete?', 'Enter \'Y\' or \'N\': ') == 'y':
+        if get_user_input('Are you sure you want to delete?', 'Enter \'y\' or \'n\': ') == 'Y':
             database_control.delete_artwork(artist_name, artwork_name)
         else:
             print('Deletion cancelled.')
