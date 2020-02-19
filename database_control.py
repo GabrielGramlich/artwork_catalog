@@ -23,6 +23,7 @@ def search_artist(name):
     artist = Artist().select().where(Artist.name == name)
     if len(artist) > 0:
         exists = True
+    db.close()
     return exists
 
 
