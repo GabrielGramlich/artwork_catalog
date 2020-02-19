@@ -3,16 +3,16 @@ from database_setup import Artist_Table as Artist, Artwork_Table as Artwork
 
 db = SqliteDatabase('artwork_catalog.sqlite')
 
-def create_artist(artist):
+def create_artist(new_artist):
     db.connect()
-    artist = Artist(name=artist.name, email=artist.email)
+    artist = Artist(name=new_artist.name, email=new_artist.email)
     artist.save()
     db.close()
 
 
-def create_artwork(artwork):
+def create_artwork(new_artwork):
     db.connect()
-    artwork = Artwork(artist=artwork.artist, artwork=artwork.name, price=artwork.price, availability=artwork.availability)
+    artwork = Artwork(artist=new_artwork.artist, artwork=new_artwork.name, price=new_artwork.price, availability=new_artwork.availability)
     artwork.save()
     db.close()
 
