@@ -1,5 +1,6 @@
 from artist import Artist
 from artwork import Artwork
+import database_control
 from get_input import *
 
 def create_artist():
