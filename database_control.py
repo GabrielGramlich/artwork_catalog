@@ -12,7 +12,7 @@ def create_artist(new_artist):
 
 def create_artwork(new_artwork):
     db.connect()
-    artwork = Artwork(artist=new_artwork.artist, artwork=new_artwork.name, price=new_artwork.price, availability=new_artwork.availability)
+    artwork = Artwork(artist=new_artwork.artist, artwork=new_artwork.artwork_name, price=new_artwork.price, availability=new_artwork.availability)
     artwork.save()
     db.close()
 
