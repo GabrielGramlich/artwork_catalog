@@ -5,7 +5,7 @@ db = SqliteDatabase('artwork_catalog.sqlite')
 
 def create_artist(new_artist):
     db.connect()
-    artist = Artist(artist=new_artist.name, email=new_artist.email)
+    artist = Artist(artist_name=new_artist.name, email=new_artist.email)
     artist.save()
     db.close()
 
@@ -20,7 +20,7 @@ def create_artwork(new_artwork):
 def search_artist(name):
     exists = False
     db.connect()
-    artist = Artist().select().where(Artist.name == name)
+    artist = Artist().select().where(Artist.artist_name == name)
     if len(artist) > 0:
         exists = True
     db.close()
