@@ -31,11 +31,15 @@ def create_artwork():
 
 def search_artwork():
     name = get_user_input('What artist would you like to find works for?', 'Name: ')
-    artworks = database_control.search_artwork(name)
-    if len(artworks) > 0:
-        display_works(artworks)
+    exists = database_control.search_artist(name)
+    if exists:
+        artworks = database_control.search_artwork(name)
+        if len(artworks) > 0:
+            display_works(artworks)
+        else:
+            print("Artist has no artwork.")
     else:
-        print("Artist has no artwork.")
+        print('No artist with that name.')
 
 
 def display_works(artworks):
